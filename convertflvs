@@ -1,5 +1,8 @@
 #!/bin/sh
 LOGFILE=encodemp4ize.log
+# Concatenate the wget logs and move them to the root
+cat flvs/wget-log* > wget.log
+rm flvs/wget-log*
 mkdir mp4s ogvs webms
 echo '' > $LOGFILE
 STARTTIME=date
