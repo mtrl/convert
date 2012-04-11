@@ -9,6 +9,7 @@ run ./downloadflvs [number]
 ps -e | grep wget to watch for running wget processes, when all complete next step
 
 ## Convert
+delete all wget-log in flvs dir
 nohup ./convertflvs&
 watch -n 1 du flvs to check is running in bg
 Can now exit terminal
