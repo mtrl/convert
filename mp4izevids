@@ -5,5 +5,5 @@ for f in ./flvs/*
 do
         echo "-----------" >> $LOGFILE
 	echo $f >> $LOGFILE
-	ffmpeg -i $f -b 800k ./mp4s/`basename $f .flv`.mp4
+	ffmpeg -i $f -b 800k -vcodec libx264 ./mp4s/`basename $f .flv`.mp4
 done
