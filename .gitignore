@@ -1,4 +1,4 @@
-*.log
+download.log
 encodemp4ize.log
 webms/*.*
 flvs/*.*
