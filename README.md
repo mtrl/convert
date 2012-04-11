@@ -9,7 +9,6 @@ run ./downloadflvs [number]
 ps -e | grep wget to watch for running wget processes, when all complete next step
 
 ## Convert
-./convertflvs
-Ctrl-K to exit
-bg to background
+nohup ./convertflvs&
+watch -n 1 du flvs to check is running in bg
 Can now exit terminal
