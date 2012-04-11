@@ -1,0 +1,28 @@
+#!/bin/bash
+#set -e -x
+cd /home/ubuntu
+LOGFILE=setup.log
+# Install prereqs
+export DEBIAN_FRONTEND=noninteractive
+sudo apt-get update > $LOGFILE
+sudo apt-get -q -y install ffmpeg git openssh-server openssh-client zsh >> $LOGFILE
+
+# ZSH
+touch .zshrc
+sudo chsh -s /bin/zsh ubuntu >> $LOGFILE
+git clone git://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
+cp .oh-my-zsh/templates/zshrc.zsh-template .zshrc
+source .zshrc
+# set up ssh
+ssh-keygen -t dsa -N "" -C "key" -f /home/ubuntu/.ssh/id_pub >> $LOGFILE
+# get the conversion scripts
+git clone git://github.com/mtrl/convert.git >> $LOGFILE
+sudo chmod 0777 convert -R
+# allow mtrl access to this server
+cat convert/ec2automation/mtrl_id_rsa.pub >> .ssh/authorized_keys
+#EC2 tools
+#sudo apt-add-repository ppa:awstools-dev/awstools
+#sudo apt-get update
+#sudo apt-get -q -y install ec2-api-tools
+#sudo cat convert/ec2automation/zshrc-ec2-values >> .zshrc
+#source .zshrc

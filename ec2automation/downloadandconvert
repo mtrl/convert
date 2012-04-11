@@ -1,0 +1,11 @@
+#!/bin/bash
+cd /home/ubuntu/convert
+LOGFILE=/home/ubuntu/setup.log
+# get the node ID from the tag
+INSTANCE_ID=$(wget -q -O - http://169.254.169.254/latest/meta-data/instance-id)
+NODENUMBER=$(ec2-describe-tags --filter "resource-id=$INSTANCE_ID" --filter "key=node_number" | cut -f5)
+echo $NODENUMBER >> $LOGFILE
+# download videos
+./downloadvideos $NODENUMBER
+# convert them
+#./convertflvs

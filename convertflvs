@@ -1,0 +1,20 @@
+#!/bin/sh
+LOGFILE=encodemp4ize.log
+mkdir mp4s ogvs webms
+echo '' > $LOGFILE
+STARTTIME=date
+echo "Started at `$STARTTIME`" >> $LOGFILE
+for f in ./flvs/*
+do
+        echo "-----------" >> $LOGFILE
+	echo $f >> $LOGFILE
+ffmpeg -i $f -acodec libvorbis -ac 2 -ab 96k -ar 44100 -b 800k -s 640x360 ./ogvs/`basename $f .flv`.ogv
+	echo "OGV done" >> $LOGFILE
+ffmpeg -i $f -acodec libvorbis -ac 2 -ab 96k -ar 44100 -b 800k -s 640x360 ./webms/`basename $f .flv`.webm
+	echo "WEBM done" >> $LOGFILE
+#ffmpeg -i $f -acodec libfaac -ab 96k -vcodec libx264 -vpre slower -vpre main -level 21 -refs 2 -b 345k -bt 800k -threads 0 -s 640x360 ./mp4s/`basename $f .flv`.mp4
+	ffmpeg -i $f -b 800k ./mp4s/`basename $f .flv`.mp4
+	echo "MP4 done" >> $LOGFILE
+done
+echo "Started at `$STARTTIME`" >> $LOGFILE
+echo "Finished at `date`" >> $LOGFILE
