@@ -1,5 +1,5 @@
 encodemp4ize.log
-webms/*
-flvs/*
-ogvs/*
-mp4s/*
+webms/*.*
+flvs/*.*
+ogvs/*.*
+mp4s/*.*

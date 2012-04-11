@@ -4,5 +4,5 @@ mkdir flvs
 cd flvs
 then
   # download each file in the list
-  while read -r line; do eval wget "$line"; done < ../flv-lists/$1
+  while read -r line; do eval wget "$line"; echo $line >> ../download.log; done < ../flv-lists/$1
 fi
