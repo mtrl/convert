@@ -12,7 +12,7 @@ EC2_INSTANCE_KEY=conversions
 # using the default security group and a 16GB EBS datastore as /dev/sda1.
 # EC2_INSTANCE_KEY is an environment variable containing the name of the instance key.
 # --block-device-mapping ...:false to leave the disk image around after terminating instance
-EC2_RUN_RESULT=$(ec2-run-instances --instance-type t1.micro --group default --region eu-west-1 --key $EC2_INSTANCE_KEY --block-device-mapping "/dev/sda1=:16:true" --instance-initiated-shutdown-behavior stop --user-data-file instance_installs ami-020f3d76)
+EC2_RUN_RESULT=$(ec2-run-instances --instance-type c1.medium --group default --region eu-west-1 --key $EC2_INSTANCE_KEY --block-device-mapping "/dev/sda1=:150:true" --instance-initiated-shutdown-behavior stop --user-data-file instance_installs ami-020f3d76)
 
 INSTANCE_NAME=$(echo ${EC2_RUN_RESULT} | sed 's/RESERVATION.*INSTANCE //' | sed 's/ .*//')
 
@@ -46,6 +46,6 @@ echo "Instance initialised and running"
 # Maybe you don't need to do this if you're using a Reserved Instance?
 ssh-keygen -R $IP_ADDRESS
 # SSH into my BRAND NEW EC2 INSTANCE! WooHoo!!!
-#ssh -i $HOME/$EC2_INSTANCE_KEY.pem ubuntu@$IP_ADDRESS
+ssh -i $HOME/$EC2_INSTANCE_KEY.pem ubuntu@$IP_ADDRESS
 # start the process!!!
-ssh ubuntu@$IP_ADDRESS "cd /home/ubuntu/convert/ec2automation/;./downloadandconvert &" 
+#ssh ubuntu@$IP_ADDRESS "cd /home/ubuntu/convert/ec2automation/;./downloadandconvert &" 
