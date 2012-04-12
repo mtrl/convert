@@ -1,5 +1,8 @@
 #!/bin/bash
-rm -rf ogvs/* ogvs/\.*
-rm -rf mp4s/* mp4s/\.*
-rm -rf webms/* webms/\.*
+rm -rf ogvs/* 
+rm ogvs/\.*
+rm -rf mp4s/*
+rm mp4s/\.*
+rm -rf webms/*
+rm webms/\.*
 echo "Deleted ogvs, mp4s, webms"
