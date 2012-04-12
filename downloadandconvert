@@ -3,6 +3,6 @@ if [ $# -eq 1 ]
 then
 echo "Using list $1"
 ./downloadvideos $1
-cd ~
+cd ~/convert
 ./convertflvs
 fi
