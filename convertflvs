@@ -7,7 +7,8 @@ mkdir mp4s ogvs webms
 echo '' > $LOGFILE
 STARTTIME=date
 echo "Started at `$STARTTIME`" >> $LOGFILE
-for f in ./flvs/*
+#for f in ./flvs/*
+find ./flvs -name "*.flv" | while read f
 do
 #        echo "-----------" >> $LOGFILE
 #	echo $f >> $LOGFILE
