@@ -5,7 +5,7 @@ Run ./ec2_startup...
 
 ## Download
 ssh to new instance
-run ./downloadflvs [number]
+run "nohup ./downloadflvs [number] &"
 ps -e | grep wget to watch for running wget processes, when all complete next step
 
 ## Convert
