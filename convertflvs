@@ -33,4 +33,4 @@ echo "$f MP4 done" >> $LOGFILE
 done
 echo "Started at `$STARTTIME`" >> $LOGFILE
 echo "Finished at `date`" >> $LOGFILE
-mail -s "Completed encoding of videos" oi.markwilliams@gmail.com < encodemp4ize.log
+mail -s "Completed encoding of videos on `hostname`" oi.markwilliams@gmail.com < encodemp4ize.log
