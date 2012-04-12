@@ -11,13 +11,13 @@ for f in ./flvs/*
 do
 #        echo "-----------" >> $LOGFILE
 #	echo $f >> $LOGFILE
-#ffmpeg -i $f -acodec libvorbis -ac 2 -ab 96k -ar 44100 -b 800k -s 640x360 ./ogvs/`basename $f .flv`.ogv
+#ffmpeg -i "$f" -acodec libvorbis -ac 2 -ab 96k -ar 44100 -b 800k -s 640x360 ./ogvs/`basename $f .flv`.ogv
 #	echo "$f OGV done" >> $LOGFILE
-#ffmpeg -i $f -acodec libvorbis -ac 2 -ab 96k -ar 44100 -b 800k -s 640x360 ./webms/`basename $f .flv`.webm
+#ffmpeg -i "$f" -acodec libvorbis -ac 2 -ab 96k -ar 44100 -b 800k -s 640x360 ./webms/`basename $f .flv`.webm
 #	echo "$f WEBM done" >> $LOGFILE
-#ffmpeg -i $f -acodec libfaac -ab 96k -vcodec libx264 -vpre slower -vpre main -level 21 -refs 2 -b 345k -bt 800k -threads 0 -s 640x360 ./mp4s/`basename $f .flv`.mp4
-#	ffmpeg -i $f -b 800k ./mp4s/`basename $f .flv`.mp4
- ffmpeg -i $f -vcodec libx264 -vprofile high -preset slow -b:v 500k -maxrate 500k -bufsize 1000k -vf scale=-1:480 -threads 0 -acodec libfaac -ab 128k ./mp4s/`basename $f .flv`.mp4 
+#ffmpeg -i "$f" -acodec libfaac -ab 96k -vcodec libx264 -vpre slower -vpre main -level 21 -refs 2 -b 345k -bt 800k -threads 0 -s 640x360 ./mp4s/`basename $f .flv`.mp4
+#	ffmpeg -i "$f" -b 800k ./mp4s/`basename $f .flv`.mp4
+ ffmpeg -i "$f" -vcodec libx264 -vprofile high -preset slow -b:v 500k -maxrate 500k -bufsize 1000k -vf scale=-1:480 -threads 0 -acodec libfaac -ab 128k ./mp4s/`basename $f .flv`.mp4 
 	echo "$f MP4 done" >> $LOGFILE
 done
 echo "Started at `$STARTTIME`" >> $LOGFILE
