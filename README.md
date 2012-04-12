@@ -13,3 +13,5 @@ delete all wget-log in flvs dir
 nohup ./convertflvs&
 watch -n 1 du flvs to check is running in bg
 Can now exit terminal
+
+sudo resize2fs /dev/sda1
