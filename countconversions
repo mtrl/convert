@@ -1,2 +1,2 @@
 #!/bin/bash
-watch -n 1 'find mp4s -name "*.mp4" | wc -l'
+find mp4s -name "*.mp4" | wc -l

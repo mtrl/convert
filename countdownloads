@@ -1,2 +1,2 @@
 #!/bin/bash
-watch -n 1 'find flvs -name "*.flv" | wc -l'
+find flvs -name "*.flv" | wc -l
