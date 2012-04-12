@@ -11,7 +11,7 @@ ps -e | grep wget to watch for running wget processes, when all complete next st
 ## Convert
 delete all wget-log in flvs dir
 nohup ./convertflvs&
-watch -n 1 du flvs to check is running in bg
+to monitor > watch -n 1 du -h mp4s --max-depth=0
 Can now exit terminal
 
 sudo resize2fs /dev/sda1
