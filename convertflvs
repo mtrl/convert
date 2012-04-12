@@ -24,7 +24,7 @@ rsync -avz flvs/ webms/ --exclude '*.flv'
 # we rsync the flv directory minus the flvs to copy the directory structure
 rsync -avz flvs/ mp4s/ --exclude '*.flv'
 #ffmpeg -i "$f" -n -acodec libfaac -ab 96k -vcodec libx264 -vpre slower -vpre main -level 21 -refs 2 -b 345k -bt 800k -threads 0 -s 640x360 ./mp4s/`basename $f .flv`.mp4
- ffmpeg -i "$f" -n -vcodec libx264 -vprofile high -preset slow -b:v 500k -maxrate 500k -bufsize 1000k -vf scale=-1:480 -threads 0 -acodec libfaac -ab 128k ./mp4s/`basename $FILENAME .flv`.mp4 
+ffmpeg -i "$f" -n -vcodec libx264 -vprofile high -preset slow -b:v 500k -maxrate 500k -bufsize 1000k -threads 0 -acodec libfaac -ab 128k ./mp4s/`basename $FILENAME .flv`.mp4 
 	echo "$f MP4 done" >> $LOGFILE
 done
 echo "Started at `$STARTTIME`" >> $LOGFILE
