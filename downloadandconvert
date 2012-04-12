@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ $# -eq 1 ]
+then
+./downloadvideos $1
+cd ~
+./convertflvs
+fi
