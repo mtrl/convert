@@ -2,7 +2,7 @@
 MY_DIR=`dirname $0`
 source $MY_DIR/nodecount
 #Downloaded
-echo "# Stats at `date`"
+echo "# Stats as of `date`"
 echo "## FLVs downloaded from Siemens' media server"
 for i in `seq 1 $NODECOUNT`
 do
