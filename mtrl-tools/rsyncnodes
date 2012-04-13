@@ -1,0 +1,6 @@
+#!/bin/zsh
+NODECOUNT=6
+for i in `seq 1 $NODECOUNT`
+do
+  rsync -avz ubuntu@vc$i:convert/mp4s /mnt/xvdf/
+done

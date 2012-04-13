@@ -1,5 +1,5 @@
 #!/bin/zsh
-NODECOUNT=4
+NODECOUNT=6
 #Downloaded
 echo "Pulling"
 echo "-----"
