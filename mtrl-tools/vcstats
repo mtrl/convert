@@ -1,6 +1,5 @@
 #!/bin/zsh
-# EC2names
-NODECOUNT=6
+source nodecount
 #Downloaded
 echo "Stats at `date`"
 echo "----"

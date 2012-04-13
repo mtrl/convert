@@ -4,3 +4,6 @@ rsync -avz ubuntu@vc3:convert/mp4s /mnt/xvdf/
 rsync -avz ubuntu@vc4:convert/mp4s /mnt/xvdf/
 rsync -avz ubuntu@vc5:convert/mp4s /mnt/xvdf/
 rsync -avz ubuntu@vc6:convert/mp4s /mnt/xvdf/
+rsync -avz ubuntu@vc7:convert/mp4s /mnt/xvdf/
+rsync -avz ubuntu@vc8:convert/mp4s /mnt/xvdf/
+rsync -avz ubuntu@vc9:convert/mp4s /mnt/xvdf/

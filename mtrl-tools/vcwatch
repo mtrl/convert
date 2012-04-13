@@ -1,5 +1,5 @@
 #!/bin/zsh
-NODECOUNT=6
+source nodecount
 #Downloaded
 echo "Conversion sizes"
 echo "-----"
