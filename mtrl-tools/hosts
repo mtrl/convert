@@ -1,3 +1,13 @@
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+
 # Video conversions
 10.48.153.78    vc1
 10.226.34.160   vc2
@@ -6,3 +16,6 @@
 10.226.143.226  vcf
 10.48.193.29    vc5
 10.227.201.205  vc6
+10.226.39.48    vc7
+10.227.205.154  vc8
+10.227.139.169  vc9
