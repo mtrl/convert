@@ -14,7 +14,7 @@ rsync -avz flvs/ mp4s/ --exclude '*.flv'
 #find flvs/ -name "*.flv" > flv-files
 # The loop
 #for f in ./flvs/*
-find flvs/ -name "*.flv" | while read f
+find flvs -type f \( -iname "*.flv" ! -iname ".*" \) | while read f
 #while read -r f
 do
 FILENAME=`echo $f | sed 's#flvs/##'`
