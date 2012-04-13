@@ -1,0 +1,4 @@
+#!/bin/bash
+grep "Input #0" ../nohup.out | sed "s#Input \#0, flv, from '\./##g" | sed "s#':##g" | wc -l > convertedlist
+find ../flvs -name "*\.flv" | wc -l > flvlist
+vimdiff convertedlist flvlist
