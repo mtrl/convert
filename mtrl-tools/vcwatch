@@ -1,0 +1,13 @@
+#!/bin/zsh
+NODECOUNT=4
+#Downloaded
+echo "Conversion sizes"
+echo "-----"
+
+echo MP4s
+for i in `seq 1 $NODECOUNT`
+do
+  #echo vc$i
+  DOWNLOADS=$(ssh ubuntu@vc$i 'du convert/mp4s --max-depth=0')
+  echo vc$i = $DOWNLOADS
+done

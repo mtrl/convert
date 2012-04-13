@@ -1,0 +1,31 @@
+#!/bin/zsh
+# EC2names
+NODECOUNT=4
+#Downloaded
+echo "Stats at `date`"
+echo "----"
+echo "Downloads"
+echo "-----"
+for i in `seq 1 $NODECOUNT`
+do
+  #echo vc$i
+  #vc1 'cd convert; find flvs -name "*.flv" | wc -l'
+  DOWNLOADS=$(ssh ubuntu@vc$i 'cd convert; find flvs -name "*.flv" | wc -l')
+  echo vc$i = $DOWNLOADS
+done
+
+echo "----"
+echo "Conversions"
+echo "-----"
+for i in `seq 1 $NODECOUNT`
+do
+  #echo vc$i
+  COUNT=$(ssh ubuntu@vc$i 'cd convert; find mp4s -name "*.mp4" | wc -l')
+  echo vc$i = $COUNT
+done
+# permanent storage stats
+echo "----"
+echo "Stored files"
+echo "----"
+COUNT=$(ssh ubuntu@ip-10-226-143-226.eu-west-1.compute.internal 'cd /mnt/xvdf; find mp4s -name "*.mp4" | wc -l')
+echo MP4s = $COUNT
