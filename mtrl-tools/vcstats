@@ -29,7 +29,7 @@ done
 echo "----"
 echo "Files rsynced to permanent storage"
 echo "----"
-COUNT=$(ssh ubuntu@ip-10-226-143-226.eu-west-1.compute.internal 'cd /mnt/xvdf; find mp4s -name "*.mp4" | wc -l')
+COUNT=$(ssh ubuntu@ip-10-226-143-226.eu-west-1.compute.internal 'cd /mnt/xvdg; find mp4s -name "*.mp4" | wc -l')
 echo Number of MP4s = $COUNT
-SIZE=$(ssh ubuntu@ip-10-226-143-226.eu-west-1.compute.internal 'cd /mnt/xvdf; du -h mp4s --max-depth=0 | cut -f1')
+SIZE=$(ssh ubuntu@ip-10-226-143-226.eu-west-1.compute.internal 'cd /mnt/xvdg; du -h mp4s --max-depth=0 | cut -f1')
 echo Size of MP4s = $SIZE
