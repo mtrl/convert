@@ -4,9 +4,9 @@ NODECOUNT=6
 echo "Pulling"
 echo "-----"
 
-echo MP4s
 for i in `seq 1 $NODECOUNT`
 do
   echo vc$i
   ssh ubuntu@vc$i 'cd convert;git pull;'
 done
+ssh ubuntu@vcf 'cd convert;git pull;'
