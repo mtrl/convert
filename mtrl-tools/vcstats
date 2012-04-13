@@ -1,5 +1,6 @@
 #!/bin/zsh
-source nodecount
+MY_DIR=`dirname $0`
+source $MY_DIR/nodecount
 #Downloaded
 echo "Stats at `date`"
 echo "----"
