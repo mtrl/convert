@@ -1,6 +1,6 @@
-#!/bin/zsh
-NODECOUNT=6
-for i in `seq 1 $NODECOUNT`
-do
-  rsync -avz ubuntu@vc$i:convert/mp4s /mnt/xvdf/
-done
+rsync -avz ubuntu@vc1:convert/mp4s /mnt/xvdf/
+rsync -avz ubuntu@vc2:convert/mp4s /mnt/xvdf/
+rsync -avz ubuntu@vc3:convert/mp4s /mnt/xvdf/
+rsync -avz ubuntu@vc4:convert/mp4s /mnt/xvdf/
+rsync -avz ubuntu@vc5:convert/mp4s /mnt/xvdf/
+rsync -avz ubuntu@vc6:convert/mp4s /mnt/xvdf/
