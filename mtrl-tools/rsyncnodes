@@ -1,3 +1,15 @@
+#flvs
+rsync -avz ubuntu@vc1:convert/flvs /mnt/xvdg/
+rsync -avz ubuntu@vc2:convert/flvs /mnt/xvdg/
+rsync -avz ubuntu@vc3:convert/flvs /mnt/xvdg/
+rsync -avz ubuntu@vc4:convert/flvs /mnt/xvdg/
+rsync -avz ubuntu@vc5:convert/flvs /mnt/xvdg/
+rsync -avz ubuntu@vc6:convert/flvs /mnt/xvdg/
+rsync -avz ubuntu@vc7:convert/flvs /mnt/xvdg/
+rsync -avz ubuntu@vc8:convert/flvs /mnt/xvdg/
+rsync -avz ubuntu@vc9:convert/flvs /mnt/xvdg/
+
+#mp4s
 rsync -avz ubuntu@vc1:convert/mp4s /mnt/xvdg/
 rsync -avz ubuntu@vc2:convert/mp4s /mnt/xvdg/
 rsync -avz ubuntu@vc3:convert/mp4s /mnt/xvdg/
