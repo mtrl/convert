@@ -5,9 +5,9 @@ rsync -avz ubuntu@vc2:convert/nohup.out /mnt/xvdg/logs/vc2nohup.out
 #rsync -avz ubuntu@vc4:convert/nohup.out /mnt/xvdg/logs/vc4nohup.out
 rsync -avz ubuntu@vc5:convert/nohup.out /mnt/xvdg/logs/vc5nohup.out
 rsync -avz ubuntu@vc6:convert/nohup.out /mnt/xvdg/logs/vc6nohup.out
-rsync -avz ubuntu@vc7:convert/nohup.out /mnt/xvdg/logs/vc7nohup.out
-rsync -avz ubuntu@vc8:convert/nohup.out /mnt/xvdg/logs/vc8nohup.out
-rsync -avz ubuntu@vc9:convert/nohup.out /mnt/xvdg/logs/vc9nohup.out
+#rsync -avz ubuntu@vc7:convert/nohup.out /mnt/xvdg/logs/vc7nohup.out
+#rsync -avz ubuntu@vc8:convert/nohup.out /mnt/xvdg/logs/vc8nohup.out
+#rsync -avz ubuntu@vc9:convert/nohup.out /mnt/xvdg/logs/vc9nohup.out
 #flvs
 rsync -avz ubuntu@vc1:convert/flvs /mnt/xvdg/
 rsync -avz ubuntu@vc2:convert/flvs /mnt/xvdg/
@@ -15,9 +15,9 @@ rsync -avz ubuntu@vc2:convert/flvs /mnt/xvdg/
 #rsync -avz ubuntu@vc4:convert/flvs /mnt/xvdg/
 rsync -avz ubuntu@vc5:convert/flvs /mnt/xvdg/
 rsync -avz ubuntu@vc6:convert/flvs /mnt/xvdg/
-rsync -avz ubuntu@vc7:convert/flvs /mnt/xvdg/
-rsync -avz ubuntu@vc8:convert/flvs /mnt/xvdg/
-rsync -avz ubuntu@vc9:convert/flvs /mnt/xvdg/
+#rsync -avz ubuntu@vc7:convert/flvs /mnt/xvdg/
+#rsync -avz ubuntu@vc8:convert/flvs /mnt/xvdg/
+#rsync -avz ubuntu@vc9:convert/flvs /mnt/xvdg/
 
 #mp4s
 rsync -avz ubuntu@vc1:convert/mp4s /mnt/xvdg/
@@ -26,6 +26,6 @@ rsync -avz ubuntu@vc2:convert/mp4s /mnt/xvdg/
 #rsync -avz ubuntu@vc4:convert/mp4s /mnt/xvdg/
 rsync -avz ubuntu@vc5:convert/mp4s /mnt/xvdg/
 rsync -avz ubuntu@vc6:convert/mp4s /mnt/xvdg/
-rsync -avz ubuntu@vc7:convert/mp4s /mnt/xvdg/
-rsync -avz ubuntu@vc8:convert/mp4s /mnt/xvdg/
-rsync -avz ubuntu@vc9:convert/mp4s /mnt/xvdg/
+#rsync -avz ubuntu@vc7:convert/mp4s /mnt/xvdg/
+#rsync -avz ubuntu@vc8:convert/mp4s /mnt/xvdg/
+#rsync -avz ubuntu@vc9:convert/mp4s /mnt/xvdg/
