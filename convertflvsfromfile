@@ -1,0 +1,13 @@
+#!/bin/bash
+while read -r f
+do
+FILENAME=`echo $f | sed 's#flvs/##'`
+# OGVS
+#ffmpeg -i "$f" -n -acodec libvorbis -ac 2 -ab 96k -ar 44100 -b 800k -s 640x360 "./ogvs/`basename $FILENAME .flv`.ogv" < /dev/null
+#       echo "$f OGV done" >> $LOGFILE
+# WEBMS
+#ffmpeg -i "$f" -n -acodec libvorbis -ac 2 -ab 96k -ar 44100 -b 800k -s 640x360 "./webms/`basename $FILENAME .flv`.webm" < /dev/null
+#       echo "$f WEBM done" >> $LOGFILE
+MP4FILENAME=`echo $FILENAME | sed 's#\.flv#\.mp4#'`
+ffmpeg -i "./$f" -vcodec libx264 -vprofile high -preset slow -b:v 500k -maxrate 500k -bufsize 1000k -threads 0 -acodec libfaac -ab 128k "./mp4s/$MP4FILENAME" < /dev/null
+done < flv-lists/missing-node1
