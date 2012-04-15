@@ -4,7 +4,7 @@ source $MY_DIR/nodecount
 #Downloaded
 echo "# Stats as of `date`"
 echo "## FLVs downloaded from Siemens' media server"
-for i in 2 5 6
+for i in 6
 do
   #echo vc$i
   #vc1 'cd convert; find flvs -name "*.flv" | wc -l'
@@ -15,7 +15,7 @@ do
 done
 
 echo "## Number of converted MP4 files"
-for i in 2 5 6
+for i in 6
 do
   #echo vc$i
   COUNT=$(ssh ubuntu@vc$i 'cd convert; find mp4s -name "*.mp4" | wc -l')
