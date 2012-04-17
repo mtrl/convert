@@ -1,0 +1,20 @@
+#!/bin/bash
+cd ~/ebs/
+mkdir mp4s-qt-faststart
+LOGFILE=qt-faststart.log
+# Concatenate the wget logs and move them to the root
+echo '' > $LOGFILE
+STARTTIME=date
+echo "Started at `$STARTTIME`" >> $LOGFILE
+# The loop
+find flvs -type f \( -iname "*.flv" ! -iname ".*" \) | while read f
+do
+FILENAME=`echo $f | sed 's#flvs/##'`
+MP4FILENAME=`echo $FILENAME | sed 's#\.flv#\.mp4#'`
+qt-faststart "./mp4s/$MP4FILENAME" "./mp4s-qt-faststart/$MP4FILENAME"
+echo "$f MP4 done" >> $LOGFILE
+echo "/mp4s/$MP4FILENAME"
+done
+echo "Started at `$STARTTIME`" >> $LOGFILE
+echo "Finished at `date`" >> $LOGFILE
+#mail -s "Completed qt-faststart of videos on `hostname`" oi.markwilliams@gmail.com < encodemp4ize.log
