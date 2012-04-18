@@ -12,10 +12,10 @@ rsync -avz ubuntu@vc7:convert/nohup.out ~/ebs/logs/vc7nohup.out
 rsync -avz ubuntu@vc1:convert/flvs ~/ebs/
 rsync -avz ubuntu@vc2:convert/flvs ~/ebs/
 rsync -avz ubuntu@vc3:convert/flvs ~/ebs/
-#rsync -avz ubuntu@vc4:convert/flvs ~/ebs/
-#rsync -avz ubuntu@vc5:convert/flvs ~/ebs/
-#rsync -avz ubuntu@vc6:convert/flvs ~/ebs/
-#rsync -avz ubuntu@vc7:convert/flvs ~/ebs/
+rsync -avz ubuntu@vc4:convert/flvs ~/ebs/
+rsync -avz ubuntu@vc5:convert/flvs ~/ebs/
+rsync -avz ubuntu@vc6:convert/flvs ~/ebs/
+rsync -avz ubuntu@vc7:convert/flvs ~/ebs/
 #rsync -avz ubuntu@vc8:convert/flvs ~/ebs/
 #rsync -avz ubuntu@vc9:convert/flvs ~/ebs/
 
