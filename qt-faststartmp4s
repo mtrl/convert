@@ -1,6 +1,6 @@
 #!/bin/bash
 cd ~/ebs/
-mkdir mp4s-qt-faststart
+rsync -avz mp4s/ mp4s-qt-faststart --exclude '*.mp4'
 LOGFILE=qt-faststart.log
 # Concatenate the wget logs and move them to the root
 echo '' > $LOGFILE
