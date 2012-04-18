@@ -1,4 +1,6 @@
 #!/bin/zsh
+MY_DIR=`dirname $0`
+source $MY_DIR/nodecount
 #Downloaded
 echo "# Stats as of `date`"
 #echo "## FLVs downloaded from Siemens' media server"
@@ -30,10 +32,10 @@ echo
 COUNT=$(ssh ubuntu@54.247.162.110 'cd ~/ebs; find mp4s -name "*.mp4" | wc -l')
 SIZE=$(ssh ubuntu@54.247.162.110 'cd ~/ebs; du -h mp4s --max-depth=0 | cut -f1') 
 echo Number of MP4s = $COUNT / $SIZE
-echo "## Testing"
-echo
-TESTEDCOUNT=$(ssh ubuntu@54.247.162.110 'wc -l testrandom.log | cut -f1')
-echo Tested $TESTEDCOUNT files
-echo
-echo "## Files tested"
-echo $(ssh ubuntu@54.247.162.110 'cat testrandom.log')
+#echo "## Testing"
+#echo
+#TESTEDCOUNT=$(ssh ubuntu@54.247.162.110 'wc -l testrandom.log | cut -f1')
+#echo Tested $TESTEDCOUNT files
+#echo
+#echo "## Files tested"
+#echo $(ssh ubuntu@54.247.162.110 'cat testrandom.log')
