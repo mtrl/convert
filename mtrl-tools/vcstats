@@ -2,25 +2,25 @@
 #Downloaded
 echo "# Stats as of `date`"
 #echo "## FLVs downloaded from Siemens' media server"
-#for i in 6
-#do
-  #echo vc$i
+for i in `seq 1 $NODECOUNT`
+do
+  echo vc$i
   #vc1 'cd convert; find flvs -name "*.flv" | wc -l'
-#  DOWNLOADS=$(ssh ubuntu@vc$i 'find convert/flvs -type f \( -iname "*.flv" ! -iname ".*" \) | wc -l')
-#  FILESIZE=$(ssh ubuntu@vc$i 'cd convert; du -h flvs/ --max-depth=0 | cut -f1')
-#  echo vc$i = $DOWNLOADS / $FILESIZE
-#  echo;
-#done
+  DOWNLOADS=$(ssh ubuntu@vc$i 'find convert/flvs -type f \( -iname "*.flv" ! -iname ".*" \) | wc -l')
+  FILESIZE=$(ssh ubuntu@vc$i 'cd convert; du -h flvs/ --max-depth=0 | cut -f1')
+  echo vc$i = $DOWNLOADS / $FILESIZE
+  echo;
+done
 
-#echo "## Number of converted MP4 files"
-#for i in 6
-#do
-  #echo vc$i
-#  COUNT=$(ssh ubuntu@vc$i 'cd convert; find mp4s -name "*.mp4" | wc -l')
-#  FILESIZE=$(ssh ubuntu@vc$i 'cd convert; du -h mp4s/ --max-depth=0 | cut -f1')
-#  echo vc$i = $COUNT / $FILESIZE
-#  echo;
-#done
+echo "## Number of converted MP4 files"
+for i in `seq 1 $NODECOUNT`
+do
+  echo vc$i
+  COUNT=$(ssh ubuntu@vc$i 'cd convert; find mp4s -name "*.mp4" | wc -l')
+  FILESIZE=$(ssh ubuntu@vc$i 'cd convert; du -h mp4s/ --max-depth=0 | cut -f1')
+  echo vc$i = $COUNT / $FILESIZE
+  echo;
+done
 # permanent storage stats
 echo "## Files rsynced to permanent storage"
 COUNT=$(ssh ubuntu@54.247.162.110 'cd ~/ebs;find flvs -type f \( -iname "*.flv" ! -iname ".*" \) | wc -l')

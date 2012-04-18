@@ -5,10 +5,10 @@ source $MY_DIR/nodecount
 echo "Pulling"
 echo "-----"
 
-#for i in 6
-#do
-#  echo vc$i
-#  ssh ubuntu@vc$i 'cd convert;git pull;'
-#done
+for i in `seq 1 $NODECOUNT`
+do
+  echo vc$i
+  ssh ubuntu@vc$i 'cd convert;git pull;'
+done
 echo vcf
 ssh ubuntu@vcf 'cd convert;git pull;'
