@@ -1,2 +1,2 @@
 #!/bin/zsh
-NODECOUNT=7
+NODECOUNT=1
