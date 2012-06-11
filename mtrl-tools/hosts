@@ -9,5 +9,8 @@ ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 
 # Video conversions
-10.227.155.146 vc1
-10.227.135.44 vcf
+10.227.30.127 vc1
+10.48.119.238 vc2
+10.48.214.25  vc3
+10.48.39.33   vc4
+vcf
