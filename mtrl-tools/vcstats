@@ -25,15 +25,15 @@ do
 done
 # permanent storage stats
 echo "## Files rsynced to permanent storage"
-#COUNT=$(ssh ubuntu@vcf 'cd ~/ebs;find flvs -type f \( -iname "*.flv" ! -iname ".*" \) | wc -l')
-#SIZE=$(ssh ubuntu@vcf 'cd ~/ebs; du -h flvs --max-depth=0 | cut -f1')
-#echo Number of FLVs = $COUNT / $SIZE
-#echo
-#COUNT=$(ssh ubuntu@vcf 'cd ~/ebs; find mp4s -name "*.mp4" | wc -l')
-#SIZE=$(ssh ubuntu@vcf 'cd ~/ebs; du -h mp4s --max-depth=0 | cut -f1') 
-#echo Number of MP4s = $COUNT / $SIZE
-#echo "## Testing"
-#echo
+COUNT=$(ssh ubuntu@vcf 'cd ~/ebs;find flvs -type f \( -iname "*.flv" ! -iname ".*" \) | wc -l')
+SIZE=$(ssh ubuntu@vcf 'cd ~/ebs; du -h flvs --max-depth=0 | cut -f1')
+echo Number of FLVs = $COUNT / $SIZE
+echo
+COUNT=$(ssh ubuntu@vcf 'cd ~/ebs; find mp4s -name "*.mp4" | wc -l')
+SIZE=$(ssh ubuntu@vcf 'cd ~/ebs; du -h mp4s --max-depth=0 | cut -f1') 
+echo Number of MP4s = $COUNT / $SIZE
+echo "## Testing"
+echo
 #TESTEDCOUNT=$(ssh ubuntu@54.247.162.110 'wc -l testrandom.log | cut -f1')
 #echo Tested $TESTEDCOUNT files
 #echo

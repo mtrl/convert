@@ -22,9 +22,12 @@ FILENAME=`echo $f | sed 's#flvs/##'`
 #ffmpeg -i "$f" -n -acodec libvorbis -ac 2 -ab 96k -ar 44100 -b 800k -s 640x360 "./webms/`basename $FILENAME .flv`.webm" < /dev/null
 #	echo "$f WEBM done" >> $LOGFILE
 MP4FILENAME=`echo $FILENAME | sed 's#\.flv#\.mp4#'`
-ffmpeg -i "./$f" -vcodec libx264 -vprofile high -preset slow -b:v 500k -maxrate 500k -bufsize 1000k -threads 0 -acodec libfaac -ab 128k "./mp4s/$MP4FILENAME" < /dev/null
+# Get the original video width
+P_WIDTH=$(ffprobe -show_streams $f 2>/dev/null | grep "width=" | cut -d'=' -f2)
+echo $P_WIDTH
+ffmpeg -i "./$f" -vf scale="$P_WIDTH:trunc(ow/a/2)*2" -vcodec libx264 -vprofile high -preset slow -b:v 500k -maxrate 500k -bufsize 1000k -threads 0 -acodec libfaac -ab 128k "./mp4s/$MP4FILENAME" < /dev/null
 echo "$f MP4 done" >> $LOGFILE
 done
 echo "Started at `$STARTTIME`" >> $LOGFILE
 echo "Finished at `date`" >> $LOGFILE
-mail -s "Completed encoding of videos on `hostname`" oi.markwilliams@gmail.com < encodemp4ize.log
+#mail -s "Completed encoding of videos on `hostname`" oi.markwilliams@gmail.com < encodemp4ize.log
